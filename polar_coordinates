@@ -1,0 +1,21 @@
+from cmath import *
+from math import *
+s=input()
+if(s.count('-')==2):
+    l=list(map(str,s.split('-')))
+    r='-'+l[1]
+    i='-'+l[2][:-1]
+elif(s.count('-')==1 and s.count('+')==1):
+    l=list(map(str,s.split('+')))
+    r=l[0]
+    i=l[1][:-1]
+elif(s.count('-')==1 and s.count('+')==0):
+    l=list(map(str,s.split('-')))
+    r=l[0]
+    i='-'+l[1][:-1]
+else:
+    l=list(map(str,s.split('+')))
+    r=l[0]
+    i=l[1][:-1]
+print(sqrt(int(r)**2+int(i)**2))
+print(phase(complex(int(r),int(i))))
